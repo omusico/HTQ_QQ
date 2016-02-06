@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="#fff"
+   >
+    <ImageView
+        android:paddingTop="4dp"
+        android:id="@+id/activity_current_onlie_listview_item_head"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/head" />
+
+
+    <TextView
+        android:id="@+id/activity_current_onlie_listview_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/activity_current_onlie_listview_item_head"
+        android:layout_marginLeft="7dp"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/activity_current_onlie_listview_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="7dp"
+        android:text="刚刚" />
+
+    <TextView
+        android:id="@+id/activity_current_onlie_listview_item_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_current_onlie_listview_item_name"
+        android:layout_toRightOf="@+id/activity_current_onlie_listview_item_head"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="7dp"
+        
+      />
+
+</RelativeLayout>
+    
+
+</LinearLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   > 
+ <LinearLayout
+        android:layout_height="35dp"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/acm_inputbox"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:focusable="true"
+		android:focusableInTouchMode="true"
+		 >
+       <ImageView 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/search"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜索"
+            android:textColor="#818181" />
+		
+        <EditText
+          
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            
+            
+            />
+    </LinearLayout>
+    <RelativeLayout
+    android:id="@+id/xiaoxi_relative_w"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="#fff"
+   >
+    <ImageView
+        android:paddingTop="4dp"
+        android:id="@+id/fragment_xiaoxi_head"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/head" />
+
+    <TextView
+        android:id="@+id/fragment_xiaoxi_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/fragment_xiaoxi_head"
+        android:layout_marginLeft="7dp"
+        android:text="王婷"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/fragment_xiaoxi_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="7dp"
+        android:text="昨天" />
+
+    <TextView
+        android:id="@+id/fragment_xiaoxi_talk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_xiaoxi_name"
+        android:layout_toRightOf="@+id/fragment_xiaoxi_head"
+       android:layout_marginTop="4dp"
+       android:layout_marginLeft="7dp"
+        android:text="我喜欢你"
+      />
+
+</RelativeLayout>
+<View 
+       android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/devide_line"
+    />
+<RelativeLayout
+     android:id="@+id/xiaoxi_relative_l"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="#fff"
+   >
+    <ImageView
+       android:id="@+id/fragment_xiaoxi_head_l"
+       android:paddingTop="4dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/xiaoxi_img_l" />
+
+
+    <TextView
+        android:paddingTop="4dp"
+        android:id="@+id/fragment_xiaoxi_name_l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/fragment_xiaoxi_head_l"
+        android:layout_marginLeft="7dp"
+        android:text="李彦宏"
+        android:textSize="20dp" />
+
+    <TextView
+        android:paddingTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="7dp"
+        android:text="刚刚" />
+
+    <TextView
+        android:id="@+id/fragment_xiaoxi_talk_l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_xiaoxi_name_l"
+        android:layout_toRightOf="@+id/fragment_xiaoxi_head_l"
+       android:layout_marginTop="4dp"
+       android:layout_marginLeft="7dp"
+        android:text="请你明年毕业来百度上班"
+      />
+
+</RelativeLayout>
+<View 
+       android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/devide_line"
+    />
+-->
+<hq.king.view.MyListView
+    android:id="@+id/fragment_xiaoxi_recent_chat_listView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+</hq.king.view.MyListView>
+</LinearLayout>

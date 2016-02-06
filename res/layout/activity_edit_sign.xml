@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/edit_sign_relative"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+        android:background="#fff">
+
+        <Button
+            android:id="@+id/edit_sign_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="7dp"
+            android:layout_centerInParent="true"
+            android:background="#fff"
+            android:text="@string/back" />
+
+        <Button
+            android:id="@+id/edit_sign_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="7dp"
+            android:background="#fff"
+            android:text="@string/finish" />
+
+        <TextView
+            android:id="@+id/edit_sign_mine_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/button1"
+            android:text="@string/mine_sign" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/sign_editText"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="240dp"
+        android:layout_height="100dp" 
+        android:hint="在此修改你的签名"
+        android:background="@drawable/sign">
+
+        <requestFocus />
+    </EditText>
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<LinearLayout
+        android:layout_height="35dp"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/acm_inputbox"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+       >
+
+
+       <ImageView 
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/search"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="搜索"
+            android:textColor="#818181" />
+		
+        <EditText
+          
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            
+            />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/call" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_gravity="center"
+        android:text="赶快和下面的联系人QQ通话吧！" />
+
+    <View
+        android:layout_marginTop="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/devide_line"
+        ></View>"
+    <ListView
+        
+        android:id="@+id/fragment_call_constact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

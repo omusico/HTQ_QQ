@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/register_title_relative"
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_height="50dp" >
+
+        <Button
+            android:id="@+id/register_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:background="#fff"
+            android:text="@string/back" />
+
+        <TextView
+            android:id="@+id/register_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/register_title" />
+
+    </RelativeLayout>
+
+    
+
+        <EditText
+            android:id="@+id/register_account"
+            android:layout_width="match_parent"
+            android:hint="请输入你的QQ号"
+            android:inputType="number"
+            android:layout_margin="20dp"
+            android:layout_height="50dp"
+             >
+        </EditText>
+         <EditText
+            android:id="@+id/register_nick"
+            android:layout_width="match_parent"
+            android:hint="请输入你的昵称"
+            android:layout_margin="20dp"
+            android:layout_height="50dp"
+             >
+        </EditText>
+        <EditText
+            android:id="@+id/register_password"
+            android:layout_width="match_parent"
+            android:password="true"
+            android:hint="请输入密码"
+            android:layout_margin="20dp"
+            android:layout_height="50dp"
+             >
+        </EditText>
+        <EditText
+            android:id="@+id/register_password_sure"
+            android:layout_width="match_parent"
+            android:password="true"
+            android:hint="请再次输入密码"
+            android:layout_margin="20dp"
+            android:layout_height="50dp"
+             >
+
+        </EditText>
+
+        <Button
+            android:id="@+id/register_complete"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+             android:layout_margin="20dp"
+            android:text="@string/complete"
+            android:background="@color/blue" />
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HTQ_QQ</string>
+    <string name="NULL">""</string>
+    <string name="title_bar_right_btn">添加</string>
+    <string name="dynamic">动态</string>
+    <string name="constact">联系人</string>
+    <string name="more">更多</string>
+    <string name="xiaoxi">消息</string>
+    <string name="tonghua">通话</string>
+    <string name="mine">我</string>
+    <string name="back">返回</string>
+     <string name="register_title">注册账号</string>
+      <string name="complete">完成</string>
+    <string name="online">当前在线</string>
+    <string name="finish">完成</string>
+    <string name="send">发送</string>
+    <string name="mine_sign">我的签名</string>
+     <string name="delete">删除</string>
+    <string name="hello">Hello World, TitleBarViewActivity!</string>
+
+</resources>

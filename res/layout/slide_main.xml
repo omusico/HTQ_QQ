@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+   >
+
+    <!-- 使用自定义的侧滑布局，orientation必须为水平方向 -->
+
+    <hq.king.view.SlidingLayout
+        android:id="@+id/slidingLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <!--
+	        侧滑布局的根节点下，有且只能有两个子元素,这两个子元素必须是四种基本布局之一,
+	        即LinearLayout, RelativeLayout, FrameLayout或TableLayout。
+	        第一个子元素将做为左侧布局，初始化后被隐藏。第二个子元素将做为右侧布局，
+	        也就是当前Activity的主布局，将主要的数据放在里面。
+        -->
+
+        <LinearLayout
+		 android:layout_width="320dp"
+   		 android:layout_height="match_parent"
+   		 android:orientation="vertical" 
+   		
+   		 android:background="@drawable/left_layout_bg">
+  
+    <RelativeLayout
+       android:layout_marginTop="50dp"
+        android:id="@+id/mine_avator_relative"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+       >
+ <!--  android:background="#fff" -->
+        <hq.king.view.CircleImageView
+            
+            android:id="@+id/mine_avator"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" 
+            android:layout_marginLeft="20dp" >
+            
+        </hq.king.view.CircleImageView>
+      <!--    <ImageView
+            android:id="@+id/mine_avator"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+          />
+         android:src="@drawable/mine_avator"  -->
+
+        <TextView
+            android:id="@+id/mine_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="14dp"
+            android:layout_toRightOf="@+id/mine_avator"
+            android:text="一笑奈何" />
+
+        <ImageView
+            android:layout_marginLeft="7dp"
+            android:id="@+id/mine_vip"
+            android:layout_width="40dp"
+            android:layout_height="27dp"
+            android:layout_alignTop="@+id/mine_nick"
+            android:layout_toRightOf="@+id/mine_nick"
+            android:src="@drawable/vip" />
+
+        <ImageView
+            android:layout_marginTop="7dp"
+            android:id="@+id/star_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mine_nick"
+            android:layout_below="@+id/mine_nick"
+            android:src="@drawable/star" />
+
+        <ImageView
+            
+            android:id="@+id/start_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/star_1"
+            android:layout_toRightOf="@+id/star_1"
+            android:src="@drawable/star" />
+
+    </RelativeLayout>
+  
+<RelativeLayout
+    android:id="@+id/mine_sign_relative"
+   
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:text="个性签名:" />
+
+    <TextView
+        android:id="@+id/sign_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginLeft="7dp"
+        android:paddingRight="20dp"
+        android:layout_toRightOf="@+id/sign"
+        android:text="上海滩就是这样一个地方，一夜之间什么都有了，一夜之间什么都没了" />
+
+ 
+    </RelativeLayout>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/devide_line"/>
+     <LinearLayout
+                android:id="@+id/mine_linear_two"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" >
+
+                    <ImageView
+                        android:id="@+id/qianbao"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/qq_setting_qianbao" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/qianbao"
+                        android:text="我的钱包" />
+
+                   
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/devide_line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" >
+
+                    <ImageView
+                        android:id="@+id/shoucang"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/qq_setting_shoucang" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/shoucang"
+                        android:text="我的收藏" />
+
+                   
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/devide_line" />
+
+                <RelativeLayout
+                    android:id="@+id/mine_xiangce_relative"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" >
+
+                    <ImageView
+                        android:id="@+id/xiangce"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/qq_setting_xiangce" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/xiangce"
+                        android:text="我的相册" />
+
+                    
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/devide_line" />
+            </LinearLayout>
+            
+          <RelativeLayout
+                    android:id="@+id/about_me_relative"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" 
+                   
+                    android:layout_marginTop="20dp">
+
+				<hq.king.view.CircleImageView
+				        android:id="@+id/about_me"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/mine_avator" >
+				    </hq.king.view.CircleImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/about_me"
+                        android:text="关于我" />
+
+                    
+                </RelativeLayout>
+                
+              
+                 <RelativeLayout
+                    android:id="@+id/activity_mine_exit_relative"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" 
+                    android:layout_marginTop="120dp">
+
+                     <Button
+                         android:id="@+id/activity_mine_exit_button"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_alignParentBottom="true"
+                         android:layout_centerHorizontal="true"
+                         android:text="退出"
+                         android:background="@drawable/exit" />
+                    </RelativeLayout>
+                    
+
+        </LinearLayout>
+
+        <RelativeLayout 
+            android:id="@+id/content"
+            android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+           >
+		<hq.king.view.TitleBarView
+    android:id="@+id/title_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    >
+    
+</hq.king.view.TitleBarView>
+
+<FrameLayout
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:layout_above="@+id/line">
+</FrameLayout>
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:id="@+id/main_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_alignParentBottom="true"
+    android:gravity="center_vertical"
+     >
+    
+     <RelativeLayout style="@style/ButtomBar" >
+
+            <ImageButton
+                android:id="@+id/buttom_xiaoxi"
+                style="@style/ButtomBarImgBtn"
+                android:background="@drawable/bar_xiaoxi"
+                android:contentDescription="@string/app_name" />
+        </RelativeLayout>
+        <RelativeLayout style="@style/ButtomBar" >
+
+            <ImageButton
+                android:id="@+id/buttom_constact"
+                style="@style/ButtomBarImgBtn"
+                android:background="@drawable/bar_constact"
+                android:contentDescription="@string/app_name" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/ButtomBar" >
+
+            <ImageButton
+                android:id="@+id/buttom_deynaimic"
+                style="@style/ButtomBarImgBtn"
+                android:background="@drawable/bar_deynaimic"
+                android:contentDescription="@string/app_name" />
+        </RelativeLayout>
+
+</LinearLayout>
+ <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/main_bottom"
+        android:background="@color/devide_line" />
+           
+        </RelativeLayout>
+    </hq.king.view.SlidingLayout>
+
+</LinearLayout>

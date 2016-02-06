@@ -1,0 +1,41 @@
+<resources>
+
+    
+    
+    
+    <!-- QQ -->
+    <style name="ButtomBar">
+        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    
+    <style name="ButtomBarImgBtn">
+        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_width">55dp</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+    <style name="chat_content_date_style">
+	    <item name="android:minHeight">50dp</item>
+	    <item name="android:gravity">left|center</item>    
+		<item name="android:textColor">#000000</item>   
+		<item name="android:textSize">15sp</item>      
+		<item name="android:lineSpacingExtra">2dp</item>   
+		<item name="android:clickable">true</item>   
+		<item name="android:focusable">true</item>   
+		<item name="android:background">#fff</item> 
+	</style>
+    
+        <style name="TopWindowStyle" parent="android:Theme.Dialog" >
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+      	<item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->        
+     </style>
+  
+
+</resources>
