@@ -2,6 +2,7 @@ package hq.king.activity;
 
 
 import hq.king.service.GetMsgService;
+import hq.king.view.slidingmenu.CustomZoomAnimation;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -45,7 +46,7 @@ public class WelcomeActivity extends Activity {
 					startActivity(intent);
 					finish();
 				} else {
-					Intent intent = new Intent(mContext, MainActivity.class);
+					Intent intent = new Intent(mContext, CustomZoomAnimation.class);
 					startActivity(intent);
 					finish();
 				}

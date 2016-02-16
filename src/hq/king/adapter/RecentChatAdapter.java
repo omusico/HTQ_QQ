@@ -73,7 +73,7 @@ public class RecentChatAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		final RecentChatEntity entity = list.get(position);
-		holder.icon.setImageResource(R.drawable.mine_avator);
+		holder.icon.setImageResource(R.drawable.mine_avatar);
 		holder.name.setText(entity.getName());
 		holder.name.setTextColor(Color.BLACK);
 		holder.date.setText(entity.getTime());

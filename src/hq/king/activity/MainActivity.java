@@ -92,7 +92,7 @@ private Button exitButton;
 		super.onCreate(savedInstanceState);
 		
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-	//	setContentView(R.layout.main);
+		//setContentView(R.layout.main);
 		setContentView(R.layout.slide_main);
 		
 		findView();
@@ -145,7 +145,7 @@ private Button exitButton;
 		else if(share.getBoolean("isAvator", false)==false)
 		{
 			//Bitmap avator=ImgUtil.getDefaultAvator();
-			mine_avator.setBackgroundResource(R.drawable.mine_avator);
+			mine_avator.setBackgroundResource(R.drawable.mine_avatar);
 			
 		}
 		else {
@@ -199,7 +199,7 @@ private Button exitButton;
 		}
 		else if(share.getBoolean("isAvator", false)==false)
 		{
-			mTitleBarView.setDefaultImgLeft(R.drawable.mine_avator);
+			mTitleBarView.setDefaultImgLeft(R.drawable.mine_avatar);
 			
 		}
 		else
@@ -263,7 +263,7 @@ private OnClickListener aboutMeOnClickListener=new OnClickListener() {
 		
 		public void onClick(View v) {
 			new AlertDialog.Builder(MainActivity.this).setTitle("关于我").
-			setIcon(R.drawable.mine_avator).setMessage("     Copyright @2015 htq"+"\n"
+			setIcon(R.drawable.mine_avatar).setMessage("     Copyright @2015 htq"+"\n"
 					+ "胡天琪，三峡大学计算机系"
 					+"\n"+ "          All right reserved").show();
 			// TODO Auto-generated method stub

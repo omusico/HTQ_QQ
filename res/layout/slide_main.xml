@@ -37,7 +37,7 @@
  <!--  android:background="#fff" -->
         <hq.king.view.CircleImageView
             
-            android:id="@+id/mine_avator"
+            android:id="@+id/mine_avatar"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_alignParentLeft="true"
@@ -233,7 +233,7 @@
                         android:layout_height="40dp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:src="@drawable/mine_avator" >
+                        android:src="@drawable/mine_avatar" >
 				    </hq.king.view.CircleImageView>
                     <TextView
                         android:layout_width="wrap_content"

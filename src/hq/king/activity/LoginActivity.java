@@ -17,6 +17,7 @@ import hq.king.util.Constants;
 import hq.king.util.SharePreferenceUserInfoUtil;
 import hq.king.util.SystemUtil;
 import hq.king.util.TencentUtil;
+import hq.king.view.slidingmenu.CustomZoomAnimation;
 import android.R.integer;
 import android.app.Activity;
 import android.content.Context;
@@ -92,7 +93,7 @@ public class LoginActivity extends BaseActivity {
 					  edit.putBoolean("isQQLogin",true);
 					  
 					  edit.commit();
-					  Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+					  Intent intent=new Intent(LoginActivity.this,CustomZoomAnimation.class);
 					  startActivity(intent);
 					  finish();
 					  
@@ -133,8 +134,9 @@ private OnClickListener loginOnClickListener=new OnClickListener() {
 				
 			else if(account.equals("zhy")&&password.equals("hq730"))
 			{
-				Intent intent=new Intent(LoginActivity.this,MainActivity.class);
-			    startActivity(intent);
+			//	Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+				Intent intent=new Intent(LoginActivity.this,CustomZoomAnimation.class);
+				startActivity(intent);
 			    share=getSharedPreferences("htq",MODE_WORLD_READABLE);
 			    edit=share.edit();
 			    edit.putInt("flag", 1);

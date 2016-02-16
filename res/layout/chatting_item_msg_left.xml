@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:app="http://schemas.android.com/apk/res-auto"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="vertical"
@@ -34,18 +35,11 @@
 		           android:clickable="true"
 		           android:layout_alignParentLeft="true" 
                    android:layout_alignParentTop="true" 
-		           android:src="@drawable/mine_avator">
+		           android:src="@drawable/mine_avatar"
+		           app:civ_border_width="1dp"
+                   app:civ_border_color="@color/whites">
 	        </hq.king.view.CircleImageView>
-	  <!--     	<ImageView 
-		           android:id="@+id/iv_userhead" 
-		           android:layout_width="52dp"
-		           android:layout_height="52dp"
-		           android:clickable="true"
-		           android:onClick="head_xiaohei"
-		           android:layout_alignParentLeft="true" 
-                   android:layout_alignParentTop="true" 
-		           android:background="@drawable/mine_avator"/>
- 		 -->   		
+	  	
 	         	
  				<TextView 
 	            android:id="@+id/tv_chatcontent" 

@@ -1,40 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-  <TextView 
-      android:layout_width="match_parent"
-      android:layout_height="50dp"
-      android:text="@string/mine"
-     android:layout_marginBottom="0dp"
-      android:gravity="center"
-      android:background="#fff"/>
+    android:orientation="vertical"
+    android:background="@drawable/left_layout_bg"
+     >
+  
   
     <RelativeLayout
        android:layout_marginTop="7dp"
         android:id="@+id/mine_avator_relative"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-         android:background="#fff">
+        >
 
         <hq.king.view.CircleImageView
-            
             android:id="@+id/mine_avator"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"  >
-            
-        </hq.king.view.CircleImageView>
-      <!--    <ImageView
-            android:id="@+id/mine_avator"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-          />
-         android:src="@drawable/mine_avator"  -->
+            android:layout_centerVertical="true" 
+            android:layout_margin="3dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/whites"
+            />
 
         <TextView
             android:id="@+id/mine_nick"
@@ -80,7 +70,7 @@
         android:background="@color/devide_line"/>
 <RelativeLayout
     android:id="@+id/mine_sign_relative"
-    android:background="#fff"
+
     android:layout_width="match_parent"
     android:layout_height="45dp">
 
@@ -116,7 +106,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
+                
                 android:orientation="vertical" >
 
                 <RelativeLayout
@@ -229,16 +219,18 @@
                     android:id="@+id/about_me_relative"
                     android:layout_width="match_parent"
                     android:layout_height="50dp" 
-                    android:background="#fff"
+                  
                     android:layout_marginTop="20dp">
 
-                    <ImageView
+                   <hq.king.view.CircleImageView
                         android:id="@+id/about_me"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:src="@drawable/mine_avator" />
+                        android:src="@drawable/mine_avatar" 
+                        app:civ_border_width="1dp"
+            			app:civ_border_color="@color/whites"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -262,7 +254,7 @@
                     android:id="@+id/activity_mine_exit_relative"
                     android:layout_width="match_parent"
                     android:layout_height="50dp" 
-                    android:background="#fff"
+                
                     android:layout_marginTop="20dp">
 
                      <Button

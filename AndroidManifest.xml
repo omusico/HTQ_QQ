@@ -63,8 +63,19 @@
        <activity
             android:name="CurrentOnLineActivity" 
             android:screenOrientation="portrait"/>
+        <activity
+            android:name="hq.king.view.slidingmenu.CustomAnimation" 
+            android:screenOrientation="portrait"/>
          <activity
-
+            android:name="hq.king.view.slidingmenu.CustomZoomAnimation" 
+            android:screenOrientation="portrait"/>
+          <activity
+            android:name="hq.king.view.slidingmenu.SlideBaseActivity" 
+            android:screenOrientation="portrait"/>
+        
+        
+        <activity
+      
 android:name="com.tencent.tauth.AuthActivity"
 
 android:launchMode="singleTask"

@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">HTQ_QQ</string>
-    <string name="NULL">""</string>
+    <string name="anim_zoom">Zoom</string>
     <string name="title_bar_right_btn">添加</string>
     <string name="dynamic">动态</string>
     <string name="constact">联系人</string>
