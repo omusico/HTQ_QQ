@@ -40,8 +40,24 @@ stackoverflow（个人觉得这个网站是调bug求帮助最好的网站，可�
 
 
 APP具体界面请参看运行截图文件夹
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/启动运行界面.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/注册界面.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/登陆界面.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/调用腾讯QQ登陆授权界面.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/主界面_消息.jpg)![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/主界面_联系人.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/主界面_动态.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/主界面_popUpWindow界面.jpg)
-![image](https://github.com/HuTianQi/HTQ_QQ/blob/master/%E8%BF%90%E8%A1%8C%E6%88%AA%E5%9B%BE/%E4%B8%BB%E7%95%8C%E9%9D%A2_popUpWindow%E7%95%8C%E9%9D%A2.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/滑动菜单截图_1.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/滑动菜单截图_2.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/滑动菜单截图_3.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/聊天界面.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/调用腾讯QQ空间登陆界面.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/修改个性签名界面.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/关于作者界面.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/聊天界面.jpg)
+
+
+
 
 
             *******************************************
