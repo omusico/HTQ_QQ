@@ -39,7 +39,7 @@ UserDB保存用户的好友信息到数据库。
 stackoverflow（个人觉得这个网站是调bug求帮助最好的网站，可惜是英文）寻求错误信息查找解决方案。
 
 
-APP具体界面请参看运行截图文件夹
+APP具体界面请参看运行截图文件夹,以下为该APP程序结构图
 
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/HQ_QQ程序结构图.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/HQ_QQ程序结构图.vsd)
