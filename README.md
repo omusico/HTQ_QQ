@@ -39,6 +39,9 @@ UserDB保存用户的好友信息到数据库。
 stackoverflow（个人觉得这个网站是调bug求帮助最好的网站，可惜是英文）寻求错误信息查找解决方案。
 
 
+![image](https://github.com/ButBueatiful/dotvim/raw/master/运行截图/vim-screenshot.jpg)
+
+
 
             *******************************************
             *  CopyRight:胡琪(htq) 三峡大学计算机系   *
