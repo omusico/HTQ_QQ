@@ -40,6 +40,9 @@ stackoverflow（个人觉得这个网站是调bug求帮助最好的网站，可�
 
 
 APP具体界面请参看运行截图文件夹
+
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/HQ_QQ程序结构图.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/HQ_QQ程序结构图.vsd)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/启动运行界面.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/注册界面.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/登陆界面.jpg)
