@@ -54,7 +54,7 @@ APP具体界面请参看运行截图文件夹
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/调用腾讯QQ空间登陆界面.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/修改个性签名界面.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/关于作者界面.jpg)
-![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/聊天界面.jpg)
+
 
 
 
