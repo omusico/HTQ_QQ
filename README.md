@@ -22,13 +22,14 @@
 在GetMsgService服务中采用了广播与BaseActivity传递信息。
 
 (5)网络通信及多线程：
-    采用Socket通信，为了在网络上传送用户的信息，采用了ObjectInputStream/ObjectOutputStream来读写信息，定义的User类实现来Serializale接口实现序列化以达到在网络上传输的目的
+    最基本网络请求采用HttpUrlConnection和Volley(主要用来处理请求频繁但数据量不大的情况，比如Json和图片的请求)
+    最核心的聊天功能采用Socket通信，为了在网络上传送用户的信息，采用了ObjectInputStream/ObjectOutputStream来读写信息，定义的User类实现来Serializale接口实现序列化以达到在网络上传输的目的
 将客户端读写功能放到单独的线程中，通过Client类来管理ClientInputThread与ClientOutputThread，在ClientInputThread中接收服务器端消息的代码在public void run(){}
 方法中，因为该方法返回值为void无法返回线程中读取的信息，所以采用了接口回调
 技术对外传递信息
 
 (6)xml与json数据解析：
-     这个在腾讯第三方接口调用中用到，用来解析从腾讯服务器端获取的用户登录的一些基本信息，如昵称，用户头像等，这个主要参考腾讯开放平台提供的openAPI文档
+     这个在腾讯第三方接口调用中用到，用来解析从腾讯服务器端获取的用户登录的一些基本信息，如昵称，用户头像等，这个主要参考腾讯开放平台提供的openAPI文档，在QQ天气功能模块也用到，主要采用Volley获取从中国天气网指定接口中获取的json数据。
 
 (7)数据存储，数据库操作
     比如保存用户头像等一些资料到本地文件，MessageDB保存用户的聊天记录到数据库
@@ -39,7 +40,12 @@ UserDB保存用户的好友信息到数据库。
 stackoverflow（个人觉得这个网站是调bug求帮助最好的网站，可惜是英文）寻求错误信息查找解决方案。
 
 
-APP具体界面请参看运行截图文件夹
+以下为该APP程序结构图（vsd文件请参看目录中的HQ_QQ程序结构图.vsd文件）
+
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/HQ_QQ程序结构图.jpg)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/HQ_QQ程序结构图.vsd)
+
+以下为APP部分运行截图，具体界面请参看运行截图文件夹
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/启动运行界面.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/注册界面.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/登陆界面.jpg)
