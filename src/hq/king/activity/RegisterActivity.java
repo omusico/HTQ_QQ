@@ -20,8 +20,10 @@ import hq.king.transport.TranObjectType;
 import hq.king.transport.TransportObject;
 import hq.king.util.Constants;
 import hq.king.util.SharePreferenceUserInfoUtil;
+import hq.king.util.SystemUtil;
 import android.R.string;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -40,6 +42,7 @@ public class RegisterActivity extends BaseActivity {
 	private MyApplication application;
 	private Handler mHandler;
 	private SharePreferenceUserInfoUtil util;
+	private  ProgressDialog pdDialog;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
@@ -104,6 +107,9 @@ private OnClickListener completeOnClickListener=new OnClickListener() {
 
 private void register(int id,String password,String nick)
 {
+	    pdDialog=SystemUtil.createWaitDialog(this,"正在注册，请稍后！");
+	    pdDialog.show();
+	    
  		application=(MyApplication) getApplication();
  		Client client=application.getClient();
 	    ClientOutputThread out=client.getClientOutputThread();
@@ -120,6 +126,7 @@ private void register(int id,String password,String nick)
 	    }else {
 	    	Toast.makeText(getApplicationContext(), "服务器端连接暂时出错，请稍后重试或返回登陆界面用管理员账号登陆！",0).show();
 		}
+	    
 }
 @Override
 protected void getMessage(TransportObject msg) {
@@ -129,6 +136,7 @@ protected void getMessage(TransportObject msg) {
 		User u = (User) msg.getObject();
 		int id = u.getId();
 		if (id > 0) { 	
+			pdDialog.dismiss();
 			Toast.makeText(RegisterActivity.this, "账号注册成功！",Toast.LENGTH_SHORT).show();
 			finish();
 		}

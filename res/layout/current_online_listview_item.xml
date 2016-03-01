@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/activity_current_onlie_listview_item_head"
         android:layout_marginLeft="7dp"
+        android:textColor="@android:color/black"
         android:textSize="20dp" />
 
     <TextView
@@ -32,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginRight="7dp"
+        android:textColor="@android:color/black"
         android:text="刚刚" />
 
     <TextView

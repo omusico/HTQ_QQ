@@ -36,7 +36,6 @@ public abstract class CustomAnimation extends SlideBaseActivity {
 	private TitleBarView mTitleBarView;
 	private ImageButton mXiaoxi,mConstact,mDeynaimic,mSetting;
 	private View currentButton;
-	private LinearLayout buttomBarGroup;
 	private Button linear_leftBtn;
 	private SharedPreferences share;
 	private IntentFilter mIntentFilter;
@@ -79,7 +78,7 @@ public abstract class CustomAnimation extends SlideBaseActivity {
 	//	slidingLayout=(SlidingLayout)findViewById(R.id.slidingLayout);
 		mContent=(RelativeLayout) findViewById(R.id.content);
 		mTitleBarView=(TitleBarView) findViewById(R.id.title_bar);
-		buttomBarGroup=(LinearLayout) findViewById(R.id.main_bottom);
+	//	(LinearLayout) findViewById(R.id.main_bottom);
 		mXiaoxi=(ImageButton) findViewById(R.id.buttom_xiaoxi);
 		mConstact=(ImageButton) findViewById(R.id.buttom_constact);
 		mDeynaimic=(ImageButton) findViewById(R.id.buttom_deynaimic);

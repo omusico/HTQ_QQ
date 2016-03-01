@@ -4,7 +4,8 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="14" />
+    <uses-sdk android:minSdkVersion="14"
+          android:targetSdkVersion="14"  />
     
 
 
@@ -63,6 +64,10 @@
        <activity
             android:name="CurrentOnLineActivity" 
             android:screenOrientation="portrait"/>
+       <activity
+            android:name="WeatherActivity" 
+            android:screenOrientation="portrait"/>
+       
         <activity
             android:name="hq.king.view.slidingmenu.CustomAnimation" 
             android:screenOrientation="portrait"/>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+        android:background="#fff">
+
+        <Button
+            android:id="@+id/edit_sign_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="7dp"
+            android:layout_centerInParent="true"
+            android:background="#fff"
+            android:text="@string/back" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
+            android:text="@string/qq_weather" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/weather_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="18dp"
+             />
+
+        <TextView
+            android:id="@+id/weather_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/weather_date"
+            android:layout_alignBottom="@+id/weather_date"
+            android:layout_toRightOf="@+id/weather_date"
+            />
+
+        <TextView
+            android:id="@+id/weather_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/weather_week"
+            android:layout_below="@+id/weather_button_switch_city"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="72dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageView
+            android:id="@+id/weather_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/weather_temperature"
+            android:layout_below="@+id/weather_temperature"
+            android:layout_marginTop="42dp"
+            android:src="@drawable/qq_setting_weather" />
+
+        <TextView
+            android:id="@+id/weather_text_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/weather_week"
+            android:layout_alignBottom="@+id/weather_week"
+            android:layout_toLeftOf="@+id/weather_button_switch_city"
+            />
+
+        <Button
+            android:id="@+id/weather_button_switch_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/weather_text_city"
+            android:layout_alignBottom="@+id/weather_text_city"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14dp"
+            android:background="@android:color/transparent"
+            android:text="@string/switch_city" />
+
+        <TextView
+            android:id="@+id/weather_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/weather_image"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/weather_image"
+             />
+        
+    </RelativeLayout>
+
+</LinearLayout>

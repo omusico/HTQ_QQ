@@ -2,16 +2,19 @@ package hq.king.adapter;
 
 
 import hq.king.activity.R;
+import hq.king.util.SmileUtils;
 import hq.king.view.ChatMsgEntity;
 
 import java.util.List;
 
 import android.content.Context;
+import android.text.Spannable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.TextView.BufferType;
 
 public class ChatMsgViewAdapter extends BaseAdapter {
 
@@ -99,7 +102,11 @@ public class ChatMsgViewAdapter extends BaseAdapter {
 	    
 	    viewHolder.tvSendTime.setText(entity.getDate());
 	    viewHolder.tvUserName.setText(entity.getName());
-	    viewHolder.tvContent.setText(entity.getText());
+	    Spannable span = SmileUtils.getSmiledText(ctx,
+	    		entity.getText());
+        // …Ë÷√ƒ⁄»›
+	    viewHolder.tvContent.setText(span, BufferType.SPANNABLE);
+	  //  viewHolder.tvContent.setText(entity.getText());
 	    
 	    return convertView;
     }

@@ -1,16 +1,15 @@
 package hq.king.activity;
 
 import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.net.Socket;
-import java.net.UnknownHostException;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
 import hq.king.adapter.ChatMsgViewAdapter;
+import hq.king.adapter.ExpressionAdapter;
+import hq.king.adapter.ExpressionPagerAdapter;
 import hq.king.app.MyApplication;
 import hq.king.client.Client;
 import hq.king.client.ClientOutputThread;
@@ -20,31 +19,46 @@ import hq.king.entity.User;
 import hq.king.transport.TranObjectType;
 import hq.king.transport.TransportObject;
 import hq.king.util.MyDate;
+import hq.king.util.SmileUtils;
 import hq.king.view.ChatMsgEntity;
-import android.content.Intent;
+import hq.king.view.ExpandGridView;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.view.ViewPager;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
-public class ChatActivity extends BaseActivity {
-	private Button chat_title_back,chat_bottom_send;
+public class ChatActivity extends BaseActivity implements OnClickListener{
+	private Button chat_title_back,chat_bottom_send,btnMore;
 	private TextView chat_title_nick;
 	private EditText chat_bottom_edit;
 	private ListView mListView;
 	private ChatMsgViewAdapter mAdapter;
 	private List<ChatMsgEntity> mDataArrays = new ArrayList<ChatMsgEntity>();
+	private List<String> reslist;
 	private User user;
 	private Client client;
 	private MyApplication application;
 	private MessageDB messageDB;
 	private ClientOutputThread out;
+	private LinearLayout emojiIconContainer;
+	private LinearLayout btnContainer;
+	private ImageView iv_emoticons_normal,iv_emoticons_checked;
+	private View more;
+
+    private ViewPager expressionViewpager;
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.activity_chat);
@@ -67,6 +81,14 @@ public class ChatActivity extends BaseActivity {
 			chat_title_back=(Button) findViewById(R.id.chat_title_back);
 			chat_bottom_send=(Button) findViewById(R.id.chat_bottom_send);
 			chat_bottom_edit=(EditText) findViewById(R.id.chat_bottom_edit);
+			
+			 iv_emoticons_normal = (ImageView) findViewById(R.id.iv_emoticons_normal);
+		     iv_emoticons_checked = (ImageView) findViewById(R.id.iv_emoticons_checked);
+		     btnMore = (Button) findViewById(R.id.btn_more);
+		     emojiIconContainer = (LinearLayout) findViewById(R.id.ll_face_container);
+		     btnContainer = (LinearLayout) findViewById(R.id.ll_btn_container);
+		     more = findViewById(R.id.more);
+		     expressionViewpager = (ViewPager) findViewById(R.id.vPager);
 		}
 	void init() throws IOException  
 	   {
@@ -79,10 +101,65 @@ public class ChatActivity extends BaseActivity {
 		 user=(User) getIntent().getSerializableExtra("user");
 		 chat_title_nick.setText(user.getName());
 		 messageDB=new MessageDB(this);
-		 initLogin();
+		 
+		 iv_emoticons_normal.setOnClickListener(this);
+	     iv_emoticons_checked.setOnClickListener(this);
+	     chat_bottom_edit.addTextChangedListener(editTextWatcher);
+		
+	     initLogin();
 		 initData();
 				
 	   }
+	  public void onClick(View view) {
+	  
+		  int id=view.getId();
+		  if (id == R.id.iv_emoticons_normal) { // 点击显示表情框
+	            more.setVisibility(View.VISIBLE);
+	            iv_emoticons_normal.setVisibility(View.INVISIBLE);
+	            iv_emoticons_checked.setVisibility(View.VISIBLE);
+	            btnContainer.setVisibility(View.GONE);
+	            emojiIconContainer.setVisibility(View.VISIBLE);
+	         //   hideKeyboard();
+	        } else if (id == R.id.iv_emoticons_checked) { // 点击隐藏表情框
+	            iv_emoticons_normal.setVisibility(View.VISIBLE);
+	            iv_emoticons_checked.setVisibility(View.INVISIBLE);
+	            btnContainer.setVisibility(View.VISIBLE);
+	            emojiIconContainer.setVisibility(View.GONE);
+	            more.setVisibility(View.GONE);
+
+	        }else if(id==R.id.btn_more)
+	        {
+	        	 btnContainer.setVisibility(View.VISIBLE);
+	        	 more.setVisibility(View.VISIBLE);
+	        	
+	        }
+	  }
+	  /**
+	     * 显示或隐藏图标按钮页
+	     * 
+	     * @param view
+	     */
+	    public void more(View view) {
+	        if (more.getVisibility() == View.GONE) {
+	            System.out.println("more gone");
+	          //  hideKeyboard();
+	            more.setVisibility(View.VISIBLE);
+	            btnContainer.setVisibility(View.VISIBLE);
+	            emojiIconContainer.setVisibility(View.GONE);
+	        } else {
+	            if (emojiIconContainer.getVisibility() == View.VISIBLE) {
+	                emojiIconContainer.setVisibility(View.GONE);
+	                btnContainer.setVisibility(View.VISIBLE);
+	                iv_emoticons_normal.setVisibility(View.VISIBLE);
+	                iv_emoticons_checked.setVisibility(View.INVISIBLE);
+	            } else {
+	                more.setVisibility(View.GONE);
+	            }
+
+	        }
+
+	    }
+
 	/**
 	 * 加载消息历史，从数据库中读出
 	 */
@@ -105,8 +182,40 @@ public class ChatActivity extends BaseActivity {
 		mAdapter.notifyDataSetChanged();
 		mListView.setSelection(mAdapter.getCount() - 1);
 		
+		 // 表情list
+        reslist = getExpressionRes(35);
+        // 初始化表情viewpager
+        List<View> views = new ArrayList<View>();
+        View gv1 = getGridChildView(1);
+        View gv2 = getGridChildView(2);
+        views.add(gv1);
+        views.add(gv2);
+        expressionViewpager.setAdapter(new ExpressionPagerAdapter(views));
+		
 	}
 
+	private TextWatcher editTextWatcher=new TextWatcher(){
+
+        public void onTextChanged(CharSequence s, int start, int before,
+                int count) {
+            if (!TextUtils.isEmpty(s)) {
+                btnMore.setVisibility(View.GONE);
+                chat_bottom_send.setVisibility(View.VISIBLE);
+            } else {
+                btnMore.setVisibility(View.VISIBLE);
+                chat_bottom_send.setVisibility(View.GONE);
+            }
+        }
+
+        public void beforeTextChanged(CharSequence s, int start, int count,
+                int after) {
+        }
+
+        public void afterTextChanged(Editable s) {
+
+        }
+		
+	};
 			private OnClickListener chatBackOnclickListener=new OnClickListener() {
 				
 				public void onClick(View v) {
@@ -230,5 +339,95 @@ public class ChatActivity extends BaseActivity {
 			}break;
 		}
 	}
+	
+	
+	 /**
+     * 获取表情的gridview的子view
+     * 
+     * @param i
+     * @return
+     */
+    private View getGridChildView(int i) {
+        View view = View.inflate(this, R.layout.expression_gridview, null);
+        ExpandGridView gv = (ExpandGridView) view.findViewById(R.id.gridview);
+        List<String> list = new ArrayList<String>();
+        if (i == 1) {
+            List<String> list1 = reslist.subList(0, 20);
+            list.addAll(list1);
+        } else if (i == 2) {
+            list.addAll(reslist.subList(20, reslist.size()));
+        }
+        list.add("delete_expression");
+        final ExpressionAdapter expressionAdapter = new ExpressionAdapter(this,
+                1, list);
+        gv.setAdapter(expressionAdapter);
+        gv.setOnItemClickListener(new OnItemClickListener() {
+
+            public void onItemClick(AdapterView<?> parent, View view,
+                    int position, long id) {
+                String filename = expressionAdapter.getItem(position);
+                try {
+                    // 文字输入框可见时，才可输入表情
+                    // 按住说话可见，不让输入表情
+                 //   if (buttonSetModeKeyboard.getVisibility() != View.VISIBLE) {
+
+                        if (filename != "delete_expression") { // 不是删除键，显示表情
+                            // 这里用的反射，所以混淆的时候不要混淆SmileUtils这个类
+                            @SuppressWarnings("rawtypes")
+                            Class clz = Class
+                                    .forName("hq.king.util.SmileUtils");
+                            Field field = clz.getField(filename);
+                            chat_bottom_edit.append(SmileUtils.getSmiledText(
+                                    ChatActivity.this, (String) field.get(null)));
+                        } else { // 删除文字或者表情
+                           if (!TextUtils.isEmpty(chat_bottom_edit.getText())) {
+
+                              int selectionStart = chat_bottom_edit
+                                        .getSelectionStart();// 获取光标的位置
+                                if (selectionStart > 0) {
+                                 String body = chat_bottom_edit.getText()
+                                            .toString();
+                                    String tempStr = body.substring(0,
+                                            selectionStart);
+                                    int i = tempStr.lastIndexOf("[");// 获取最后一个表情的位置
+                                    if (i != -1) {
+                                        CharSequence cs = tempStr.substring(i,
+                                                selectionStart);
+                                  if (SmileUtils.containsKey(cs
+                                                .toString()))
+                                	  chat_bottom_edit.getEditableText()
+                                                    .delete(i, selectionStart);
+                                        else
+                                        	chat_bottom_edit.getEditableText()
+                                                    .delete(selectionStart - 1,
+                                                            selectionStart);
+                                    } else {
+                                    		chat_bottom_edit.getEditableText()
+                                                .delete(selectionStart - 1,
+                                                        selectionStart);
+                                    }
+                                }
+                            }
+
+                        }
+                 //   }
+                } catch (Exception e) {
+                }
+
+            }
+        });
+        return view;
+    }
+	 public List<String> getExpressionRes(int getSum) {
+	        List<String> reslist = new ArrayList<String>();
+	        for (int x = 1; x <= getSum; x++) {
+	            String filename = "ee_" + x;
+
+	            reslist.add(filename);
+
+	        }
+	        return reslist;
+
+	    }
     	
 }

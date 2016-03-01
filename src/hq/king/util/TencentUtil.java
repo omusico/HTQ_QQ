@@ -75,7 +75,7 @@ public class TencentUtil {
 		}
 	}
 
-	// ��¼�ص��ӿ�
+	// 锟斤拷录锟截碉拷锟接匡拷
 	private IUiListener listener = new IUiListener() {
 
 		public void onError(UiError arg0) {
@@ -85,18 +85,18 @@ public class TencentUtil {
 
 		public void onComplete(Object response) {
 			// TODO Auto-generated method stub
-			// ����¼�󷵻ص�����token��expires��openId���浽mTencent������
+			// 锟斤拷锟斤拷录锟襟返回碉拷锟斤拷锟斤拷token锟斤拷expires锟斤拷openId锟斤拷锟芥到mTencent锟斤拷锟斤拷锟斤拷
 			initOpenidAndToken((JSONObject) response);
 
-			// ���½��棬��ʾ��¼�û�ͷ����ǳ�
+			// 锟斤拷锟铰斤拷锟芥，锟斤拷示锟斤拷录锟矫伙拷头锟斤拷锟斤拷浅锟�
 			updateUserInfo();
 			
-			/*�˴������첽ͨ�Ÿ�֪����activity��ȡ��Դ��ɣ�������ת��������*/
-			Message msg=new Message();
+			/*锟剿达拷锟斤拷锟斤拷锟届步通锟脚革拷知锟斤拷锟斤拷activity锟斤拷取锟斤拷源锟斤拷桑锟斤拷锟斤拷锟斤拷锟阶拷锟斤拷锟斤拷锟斤拷锟�*/
+		/*	Message msg=new Message();
 			msg.what=0x123;
 			msg.obj="isComplete";
 			QQHandler.sendMessage(msg);
-		 
+		 */
 		}
 
 		public void onCancel() {
@@ -120,7 +120,7 @@ public class TencentUtil {
 	}
 
 	
-	//����UI�����ڸ���ϵͳUI�����ݴ������ȡ���ȽϺ�ʱ�����Բ��ð�׿�첽���ƣ������߳��д������ȥ���ݣ�Ȼ��ͨ��handler֪ͨ���̸߳���UI
+	//锟斤拷锟斤拷UI锟斤拷锟斤拷锟节革拷锟斤拷系统UI锟斤拷锟斤拷锟捷达拷锟斤拷锟斤拷锟饺★拷锟斤拷冉虾锟绞憋拷锟斤拷锟斤拷圆锟斤拷冒锟阶匡拷觳斤拷锟斤拷疲锟斤拷锟斤拷锟斤拷叱锟斤拷写锟斤拷锟斤拷锟斤拷去锟斤拷锟捷ｏ拷然锟斤拷通锟斤拷handler通知锟斤拷锟竭程革拷锟斤拷UI
 	private void updateUserInfo() {
 		if (mTencent != null && mTencent.isSessionValid()) {
 			IUiListener listener = new IUiListener() {
@@ -184,7 +184,7 @@ public class TencentUtil {
 				if (response.has("nickname")) {
 					try {
 						String QQnick = response.getString("nickname");
-					  	SharedPreferences share=mActivity.getSharedPreferences("htq",mActivity.MODE_WORLD_READABLE);
+					  	SharedPreferences share=mActivity.getSharedPreferences("htq",Context.MODE_WORLD_READABLE);
 					  	Editor edit=share.edit();
 					 	edit.putString("QQnick", QQnick);
 					    edit.commit();
@@ -195,9 +195,21 @@ public class TencentUtil {
 				}
 			} else if (msg.what == 1) {
 				Bitmap bitmap = (Bitmap) msg.obj;
+				try {
+					ImgUtil.saveQQImage(bitmap);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		//		mImageView.setImageBitmap(bitmap);
 			}
-		}
+			
+			Message msg2=new Message();
+			msg2.what=0x123;
+			msg2.obj="isComplete";
+			QQHandler.sendMessage(msg2);
+		
+		}	
 	};
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -208,19 +220,19 @@ public class TencentUtil {
 				Tencent.handleResultData(data, listener);
 
 			}
-		} else if (requestCode == Constants.REQUEST_APPBAR) { // app��Ӧ�ðɵ�¼
+		} else if (requestCode == Constants.REQUEST_APPBAR) { // app锟斤拷应锟矫吧碉拷录
 			if (resultCode == Constants.RESULT_LOGIN) {
 				updateUserInfo();
 				//Util.showResultDialog(MainActivity.this,
-				//		data.getStringExtra(Constants.LOGIN_INFO), "��¼�ɹ�");
-			//	Toast.makeText(getApplicationContext(), "��½�ɹ�", Toast.LENGTH_SHORT);
+				//		data.getStringExtra(Constants.LOGIN_INFO), "锟斤拷录锟缴癸拷");
+			//	Toast.makeText(getApplicationContext(), "锟斤拷陆锟缴癸拷", Toast.LENGTH_SHORT);
 			}
 		}
 		onActivityResult(requestCode, resultCode, data);
 	}
 
 	public static Bitmap getbitmap(String imageUri) {
-		// ��ʾ�����ϵ�ͼƬ
+		// 锟斤拷示锟斤拷锟斤拷锟较碉拷图片
 
 		Bitmap bitmap = null;
 
@@ -251,7 +263,6 @@ public class TencentUtil {
 		return null;
 
 		}
-		
 		return bitmap;
 		
 		}

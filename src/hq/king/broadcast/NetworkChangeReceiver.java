@@ -2,6 +2,7 @@ package hq.king.broadcast;
 
 
 
+import hq.king.util.CommonPreferenceUtil;
 import hq.king.util.HttpUtil;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
@@ -44,10 +45,14 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
 		else {
 			if(HttpUtil.getNetTypeName(context).equals("WIFI"))
 			{
-			Toast.makeText(context,HttpUtil.getIp(context),Toast.LENGTH_SHORT).show();
+				CommonPreferenceUtil.setString(context, "NET", "WIFI");
+				//CommonPreferenceUtil.setBoolean(context,"WIFI",true);
+		//	Toast.makeText(context,HttpUtil.getIp(context),Toast.LENGTH_SHORT).show();
 			}
 			else {
-				Toast.makeText(context,HttpUtil.getMobileIP(),Toast.LENGTH_SHORT).show();
+				CommonPreferenceUtil.setString(context, "NET", "MOBILE");
+				//CommonPreferenceUtil.setBoolean(context,"Mobile",true);
+		//		Toast.makeText(context,HttpUtil.getMobileIP(),Toast.LENGTH_SHORT).show();
 			}
 		}
 	

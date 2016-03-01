@@ -11,8 +11,8 @@ import java.util.Map;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
 import hq.king.activity.EditSignActivity;
-import hq.king.activity.MainActivity;
 import hq.king.activity.R;
+import hq.king.activity.WeatherActivity;
 import hq.king.app.MyApplication;
 import hq.king.client.Client;
 import hq.king.client.ClientOutputThread;
@@ -49,7 +49,7 @@ import android.widget.Toast;
 
 public class LeftFragment extends Fragment{
 	
-	private	RelativeLayout mine_relative,about_me,mine_xiangce_relative;
+	private	RelativeLayout mine_relative_weather,mine_relative,about_me,mine_xiangce_relative;
 	private	TextView sign_text;
 	private	ImageView mine_avator;
 	private int ADAVTOR_CONST=1024;
@@ -62,6 +62,7 @@ public class LeftFragment extends Fragment{
 	private Client client;
 	private MyApplication myApplication;
 	private GestureDetector gesture;
+
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		
 				View view=inflater.inflate(R.layout.activity_mine, null);
@@ -93,6 +94,7 @@ public class LeftFragment extends Fragment{
 	{
 		mine_avator=(ImageView) getActivity().findViewById(R.id.mine_avator);
 		mine_xiangce_relative=(RelativeLayout)getActivity(). findViewById(R.id.mine_xiangce_relative);
+		mine_relative_weather=(RelativeLayout)getActivity(). findViewById(R.id.mine_relative_weather);
 		about_me=(RelativeLayout) getActivity(). findViewById(R.id.about_me_relative);
 		mine_relative=(RelativeLayout) getActivity(). findViewById(R.id.mine_sign_relative);
 		sign_text=(TextView) getActivity(). findViewById(R.id.sign_content);
@@ -125,6 +127,7 @@ public class LeftFragment extends Fragment{
 		about_me.setOnClickListener(aboutMeOnClickListener);
 		exitButton.setOnClickListener(exitOnClickListener);
 		mine_relative.setOnClickListener(mineRelaviveOnClickListener);
+		mine_relative_weather.setOnClickListener(mineRelaviveWeatherOnClickListener);
 		mine_xiangce_relative.setOnClickListener(mineXiangCeRelaviveOnClickListener);
 		sign_text.setText(FileUtil.readSignFromFile());
 		
@@ -187,6 +190,15 @@ private OnClickListener aboutMeOnClickListener=new OnClickListener() {
 			setIcon(R.drawable.mine_avatar).setMessage("     Copyright @2015 htq"+"\n"
 					+ "胡天琪，三峡大学计算机系"
 					+"\n"+ "          All right reserved").show();
+			// TODO Auto-generated method stub
+			
+		}
+	};
+private OnClickListener mineRelaviveWeatherOnClickListener=new OnClickListener() {
+		
+		public void onClick(View v) {
+			Intent intent =new Intent( getActivity(),WeatherActivity.class);
+			startActivity(intent);
 			// TODO Auto-generated method stub
 			
 		}

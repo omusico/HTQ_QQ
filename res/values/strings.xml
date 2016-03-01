@@ -19,5 +19,7 @@
     <string name="mine_sign">我的签名</string>
      <string name="delete">删除</string>
     <string name="hello">Hello World, TitleBarViewActivity!</string>
+    <string name="qq_weather">QQ天气</string>
+    <string name="switch_city">[切换]</string>
 
 </resources>

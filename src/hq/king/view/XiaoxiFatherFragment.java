@@ -24,7 +24,7 @@ import android.widget.PopupWindow.OnDismissListener;
 public class XiaoxiFatherFragment extends Fragment {
 
 	private Context mContext;
-	private View mBaseView, mPopView;;
+	private View mBaseView, mPopView;
 	private TitleBarView mTitleBarView;
 	private Button linear_rightBtn,linear_leftBtn;
 	private PopupWindow mPopupWindow;

@@ -2,12 +2,17 @@ package hq.king.util;
 
 
 
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.view.WindowManager;
@@ -27,9 +32,15 @@ public static int getScreenWidth(Context context)
 	return wm.getDefaultDisplay().getWidth();
 
 }
-public static void getSharePrefence()
-{
 
+public static ProgressDialog createWaitDialog(Context context,String msg)
+{
+	ProgressDialog dialog = new ProgressDialog(context);
+	dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+	dialog.setCanceledOnTouchOutside(false);
+	dialog.setMessage(msg);
+	return dialog;
+	
 }
 public static void ToastDialog(Context context, String title, String msg) {
 	new AlertDialog.Builder(context).setTitle(title).setMessage(msg)

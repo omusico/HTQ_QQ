@@ -2,6 +2,7 @@ package hq.king.activity;
 
 import java.util.List;
 
+
 import com.tencent.tauth.Tencent;
 
 import hq.king.app.MyApplication;
@@ -80,6 +81,7 @@ public class LoginActivity extends BaseActivity {
 	    tencentLogin.setOnClickListener(tencentLoginOnClickListener);
 		register.setOnClickListener(registerOnClickListener);
 		
+		
 		mHandler=new Handler()
 		{
 
@@ -88,6 +90,8 @@ public class LoginActivity extends BaseActivity {
 				  
 				  if(msg.what==0x123)
 				  {
+					  share=getSharedPreferences("htq",MODE_WORLD_READABLE);
+					  edit=share.edit();
 					  edit.putInt("flag", 1);
 					  
 					  edit.putBoolean("isQQLogin",true);
@@ -105,8 +109,7 @@ public class LoginActivity extends BaseActivity {
 		
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			share=getSharedPreferences("htq",MODE_WORLD_READABLE);
-		    edit=share.edit();
+			
 			
 			
 			mTencent=Tencent.createInstance(mAppid,getApplicationContext());
@@ -204,6 +207,9 @@ private OnClickListener loginOnClickListener=new OnClickListener() {
 			    	Toast.makeText(getApplicationContext(), "服务器端连接暂时出错，请稍后重试或用管理员账号登陆！",0).show();
 				}
 	    }
+	 
+	 
+	 
 	@Override
 	protected void getMessage(TransportObject msg) {
 		// TODO Auto-generated method stub

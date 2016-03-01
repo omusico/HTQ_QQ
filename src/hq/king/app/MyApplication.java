@@ -11,6 +11,8 @@ import java.net.UnknownHostException;
 
 import java.util.LinkedList;
 
+import com.hyphenate.chat.EMClient;
+
 import android.app.Application;
 
 public class MyApplication extends Application {
@@ -38,7 +40,9 @@ public class MyApplication extends Application {
 		mRecentList = new LinkedList<RecentChatEntity>();
 		mRecentAdapter = new RecentChatAdapter(getApplicationContext(),
 				mRecentList);
-		
+		/*以下代码为调用环信SDK
+		 * 
+		 * */
 	}
 	public Client getClient()
 	{

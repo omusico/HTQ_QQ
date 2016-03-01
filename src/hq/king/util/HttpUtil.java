@@ -1,12 +1,16 @@
 package hq.king.util;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.InetAddress;
+import java.net.MalformedURLException;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.URI;
@@ -35,6 +39,46 @@ import android.util.Log;
 public class HttpUtil {
 	
 	
+	public static void doGetRequest(final String uri,final HttpCallbackListener listener) throws IOException
+	{
+		new Thread(){
+			public void run ()
+			{
+				URL url;
+				try {
+					url = new URL(uri);
+					HttpURLConnection  connection=(HttpURLConnection) url.openConnection();
+					//	connection.setDoInput(true);
+					//    connection.setRequestMethod("GET");
+					    connection.connect();//必须加上该语句
+						InputStream is=connection.getInputStream();
+						BufferedReader reader=new BufferedReader(new InputStreamReader(is));
+						StringBuilder buffer=new StringBuilder();
+						String line;
+						while((line=reader.readLine())!=null)
+						{
+							buffer.append(line);
+							
+						}
+						if(listener!=null)
+						{
+
+							listener.onComplete(buffer.toString());
+						}
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			}
+		}.start();
+		
+		
+		
+	}
 	public static boolean uploadFile(File file,String url) throws ClientProtocolException, IOException
 	{
 		 HttpPost httpPost = new HttpPost(url); 

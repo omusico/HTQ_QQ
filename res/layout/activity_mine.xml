@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/left_layout_bg"
-     >
-  
-  
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/left_layout_bg"
+      android:orientation="vertical" >
+       
     <RelativeLayout
-       android:layout_marginTop="7dp"
+       android:layout_marginTop="50dp"
         android:id="@+id/mine_avator_relative"
         android:layout_width="match_parent"
         android:layout_height="75dp"
@@ -17,11 +15,11 @@
 
         <hq.king.view.CircleImageView
             android:id="@+id/mine_avator"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true" 
-            android:layout_margin="3dp"
+            android:layout_marginLeft="20dp"
             app:civ_border_width="1dp"
             app:civ_border_color="@color/whites"
             />
@@ -64,10 +62,7 @@
             android:src="@drawable/star" />
 
     </RelativeLayout>
-    <View 
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/devide_line"/>
+   
 <RelativeLayout
     android:id="@+id/mine_sign_relative"
 
@@ -101,6 +96,10 @@
         android:layout_marginRight="7dp"
         android:src="@drawable/arrow" />
     </RelativeLayout>
+     <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/devide_line"/>
      <LinearLayout
                 android:id="@+id/mine_linear_two"
                 android:layout_marginTop="20dp"
@@ -214,8 +213,44 @@
                         android:src="@drawable/arrow" />
                 </RelativeLayout>
             </LinearLayout>
-            
-          <RelativeLayout
+             <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/devide_line" />
+         
+                 <RelativeLayout
+                    android:id="@+id/mine_relative_weather"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                     >
+                      <ImageView
+                        android:id="@+id/weather"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/qq_setting_weather" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/weather"
+                        android:text="QQ天气" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="7dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/arrow" />
+                     
+                 </RelativeLayout>
+                  <RelativeLayout
                     android:id="@+id/about_me_relative"
                     android:layout_width="match_parent"
                     android:layout_height="50dp" 
@@ -240,31 +275,28 @@
                         android:layout_toRightOf="@+id/about_me"
                         android:text="关于我" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="7dp"
-                   
-                        android:scaleType="fitXY"
-                        android:src="@drawable/arrow" />
                 </RelativeLayout>
+
+                
+                     
+                
+                 
                  <RelativeLayout
                     android:id="@+id/activity_mine_exit_relative"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp" 
-                
-                    android:layout_marginTop="20dp">
-
+                    android:layout_height="match_parent"
+                    >
                      <Button
                          android:id="@+id/activity_mine_exit_button"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
                          android:layout_alignParentBottom="true"
                          android:layout_centerHorizontal="true"
+                        
                          android:text="退出"
                          android:background="@drawable/exit" />
                     </RelativeLayout>
-                    
+
+    
+            
 </LinearLayout>
