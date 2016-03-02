@@ -12,7 +12,7 @@
 在v2版本中新增的截图如下：
 
 ![img](https://github.com/HuTianQi/HTQ_QQ/blob/v2/%E8%BF%90%E8%A1%8C%E6%88%AA%E5%9B%BE/%E6%8D%95%E8%8E%B7.JPG)
-![image]https://github.com/HuTianQi/HTQ_QQ/blob/v2/%E8%BF%90%E8%A1%8C%E6%88%AA%E5%9B%BE/%E6%8D%95%E8%8E%B7.JPG
+![image](https://github.com/HuTianQi/HTQ_QQ/blob/v2/%E8%BF%90%E8%A1%8C%E6%88%AA%E5%9B%BE/%E6%8D%95%E8%8E%B71.JPG)
 ![image](https://github.com/HuTianQi/HTQ_QQ/blob/v2/%E8%BF%90%E8%A1%8C%E6%88%AA%E5%9B%BE/%E6%8D%95%E8%8E%B7.JPG)
 
 
