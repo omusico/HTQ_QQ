@@ -49,7 +49,7 @@ stackoverflow（个人觉得这个网站是调bug求帮助最好的网站，可�
 
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/登陆界面.jpg)
 
-![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/调用腾讯QQ登陆授权界面.JPG)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/调用腾讯QQ登陆授权界面.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/注册界面.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/主界面_消息界面.JPG)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/主界面_消息_通话界面.JPG)
