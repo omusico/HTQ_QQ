@@ -54,7 +54,7 @@ stackoverflow（个人觉得这个网站是调bug求帮助最好的网站，可�
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/主界面_动态.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/主界面消息_popUpWindow.JPG)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/滑动菜单界面_1.JPG)
-![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/滑动菜单界面_2.JPG)
+![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/滑动菜单界面_2.jpg)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/滑动菜单界面_3.JPG)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/聊天界面_1.JPG)
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/聊天界面_2.JPG)
