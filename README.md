@@ -42,7 +42,6 @@ stackoverflow（个人觉得这个网站是调bug求帮助最好的网站，可�
 以下为该APP程序结构图（vsd文件请参看目录中的HQ_QQ程序结构图.vsd文件）
 
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/HQ_QQ程序结构图.jpg)
-![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/HQ_QQ程序结构图.vsd)
 
 以下为APP部分运行截图，具体界面请参看运行截图文件夹
 ![image](https://github.com/HuTianQi/HTQ_QQ/raw/master/运行截图/启动界面.JPG)
